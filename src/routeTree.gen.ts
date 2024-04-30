@@ -18,7 +18,7 @@ import { Route as NameImport } from './routes/name'
 import { Route as AdminImport } from './routes/admin'
 import { Route as AbsoluteImport } from './routes/absolute'
 import { Route as IndexImport } from './routes/index'
-import { Route as ViewIdImport } from './routes/view/$id'
+import { Route as PokemonIdImport } from './routes/pokemon/$id'
 import { Route as BlogLayoutImport } from './routes/blog/_layout'
 import { Route as BlogLayoutIndexImport } from './routes/blog/_layout/index'
 import { Route as BlogLayoutSecondBlogImport } from './routes/blog/_layout/second-blog'
@@ -60,8 +60,8 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const ViewIdRoute = ViewIdImport.update({
-  path: '/view/$id',
+const PokemonIdRoute = PokemonIdImport.update({
+  path: '/pokemon/$id',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -117,8 +117,8 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogLayoutImport
       parentRoute: typeof BlogRoute
     }
-    '/view/$id': {
-      preLoaderRoute: typeof ViewIdImport
+    '/pokemon/$id': {
+      preLoaderRoute: typeof PokemonIdImport
       parentRoute: typeof rootRoute
     }
     '/blog/_layout/first-blog': {
@@ -151,7 +151,7 @@ export const routeTree = rootRoute.addChildren([
       BlogLayoutIndexRoute,
     ]),
   ]),
-  ViewIdRoute,
+  PokemonIdRoute,
 ])
 
 /* prettier-ignore-end */

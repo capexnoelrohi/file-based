@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { fetchPost } from "@/pokemon";
 
-export const Route = createFileRoute("/view/$id")({
+export const Route = createFileRoute("/pokemon/$id")({
   loader: async ({ params }) => fetchPost(params.id),
   component: PokemonComponent,
 });
